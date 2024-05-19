@@ -1,0 +1,22 @@
+<%- include('./partials/header.ejs') %>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mx-auto mt-4 ">
+                
+                    <div class="card-body">
+                        <h1 class="bg-primary text">Edit Users (<%=user.name%>)</h1>
+                        <form method="post" action="/update/<%=user._id%>" enctype="multipart/form-data" id="add-form">
+                            <div class="mb-3">
+                                <input type="text" name="name" value="<%=user.name%>" class="form-control" placeholder="Name"> <br>
+                                <input type="email" name="userEmail" value="<%=user.email%>" class="form-control" placeholder="Email"> <br>
+                                <input type="number" name="phone" value="<%=user.phone%>" class="form-control" placeholder="Phone"> <br>
+                                <input type="file" class="form-control" name="image"><br>
+                                <img src="/<%= user.image%>" width="100" class="img-thumbnail mt-1">
+                                <input type="hidden" name="old_image" value="<%=user.image%>">
+                                <button type="submit" class="btn btn-success mt-2 form-control" >Update User</button>
+                          </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+<%- include('./partials/footer.ejs') %>
